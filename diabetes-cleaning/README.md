@@ -1,54 +1,33 @@
 # diabetes-cleaning
 
-Data-cleaning workspace for the Pima Indians Diabetes dataset.
+ไปป์ไลน์ทำความสะอาดชุดข้อมูล Pima Indians Diabetes ฉบับที่จัดโครงสร้างแล้ว
+รายละเอียดทั้งหมด (คำอธิบายคอลัมน์, ขั้นตอนการทำความสะอาด, ผลลัพธ์)
+อยู่ใน [README ของ repo](../README.md)
 
-## Structure
+## โครงสร้าง
 
 ```
 diabetes-cleaning/
 ├── data/
-│   ├── raw/diabetes.csv          # source data — never edited
-│   └── clean/diabetes_clean.csv  # output of notebooks/cleaning.ipynb (not generated yet)
+│   ├── raw/diabetes.csv             # ต้นฉบับ 768 × 9 — ห้ามแก้ไข
+│   └── clean/diabetes_cleaned.csv   # ผลลัพธ์ 768 × 12 (ไม่ track ใน git)
 ├── notebooks/
-│   └── cleaning.ipynb
+│   └── cleaning (1).ipynb           # โน้ตบุ๊กทำความสะอาด
 ├── README.md
 └── .gitignore
 ```
 
-## Raw dataset
-
-`data/raw/diabetes.csv` — 768 rows, 9 columns, copied byte-for-byte from the original
-file (SHA-1 `f3e442b2a54522a7708b2992af76ccf1abb6183a`). It is the immutable source of
-truth: read it, never write to it.
-
-| Column | Description |
-| --- | --- |
-| `Pregnancies` | Number of times pregnant |
-| `Glucose` | Plasma glucose concentration (2-hr oral glucose tolerance test) |
-| `BloodPressure` | Diastolic blood pressure (mm Hg) |
-| `SkinThickness` | Triceps skin fold thickness (mm) |
-| `Insulin` | 2-hour serum insulin (mu U/ml) |
-| `BMI` | Body mass index (kg/m²) |
-| `DiabetesPedigreeFunction` | Diabetes pedigree function |
-| `Age` | Age in years |
-| `Outcome` | Target: 1 = diabetic, 0 = not diabetic |
-
-## Status
-
-**No cleaning has been applied.** `notebooks/cleaning.ipynb` currently only *inspects*
-the raw data (shape, dtypes, duplicates, zero-valued sentinels) and leaves the cleaning
-decisions to you. `data/clean/` is an empty placeholder — `diabetes_clean.csv` appears
-only once you fill in and run the cleaning section of the notebook.
-
-## Usage
+## วิธีรัน
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install pandas jupyter
-jupyter notebook notebooks/cleaning.ipynb
+pip install pandas numpy jupyter
+jupyter notebook "notebooks/cleaning (1).ipynb"
 ```
 
-## Convention
+รันทุกเซลล์ตามลำดับ เซลล์สุดท้ายจะเขียน `data/clean/diabetes_cleaned.csv`
 
-Raw in, clean out. Every transformation lives in the notebook so the cleaned file can
-always be rebuilt from `data/raw/diabetes.csv` alone.
+## หลักการ
+
+Raw in, clean out — ทุกการแปลงข้อมูลอยู่ในโน้ตบุ๊ก เพื่อให้สร้างไฟล์ที่สะอาดแล้ว
+ขึ้นมาใหม่ได้เสมอจาก `data/raw/diabetes.csv` เพียงไฟล์เดียว
