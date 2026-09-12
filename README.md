@@ -8,9 +8,7 @@
 
 ```
 data_cleaning1/
-├── diabetes.csv                 # ข้อมูลดิบ (ชุดแรก, ใช้กับ cleaning.ipynb)
-├── cleaning.ipynb               # โน้ตบุ๊กเวอร์ชันแรก — สำรวจ + ทดลองทำความสะอาด
-└── diabetes-cleaning/           # เวอร์ชันที่จัดโครงสร้างใหม่ (ใช้ตัวนี้เป็นหลัก)
+└── diabetes-cleaning/
     ├── data/
     │   ├── raw/diabetes.csv             # ข้อมูลต้นฉบับ — ห้ามแก้ไข
     │   └── clean/diabetes_cleaned.csv   # ผลลัพธ์จากโน้ตบุ๊ก (ไม่ถูก track ใน git)
