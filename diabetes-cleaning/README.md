@@ -1,6 +1,6 @@
-# diabetes-cleaning
+# diabetes cleaning
 
-ไปป์ไลน์ทำความสะอาดชุดข้อมูล Pima Indians Diabetes ฉบับที่จัดโครงสร้างแล้ว
+ทำความสะอาดชุดข้อมูล Pima Indians Diabetes ฉบับที่จัดโครงสร้างแล้ว
 รายละเอียดทั้งหมด (คำอธิบายคอลัมน์, ขั้นตอนการทำความสะอาด, ผลลัพธ์)
 อยู่ใน [README ของ repo](../README.md)
 
